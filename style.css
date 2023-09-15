@@ -9,7 +9,7 @@
   --bg-url: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
   --border-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.1);
-  --social-media-bg-color: rgba(255, 255, 255, 0);
+  --social-media-bg-color: rgba(255, 255, 255, 0.1);
   --suface-color-hover: rgba(255, 255, 255, 0.3);
   --switch-bg-url: url(/assets/moon-stars.svg) no-repeat center;
 }
@@ -77,6 +77,11 @@ body {
   z-index: 1;
   transform: translateY(-50%);
   top: 50%;
+  animation: slide-back 0.4s;
+}
+
+#switch button:hover {
+  outline: 8px solid var(--social-media-bg-color);
 }
 
 #switch span {
@@ -91,8 +96,7 @@ body {
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.4s forwards;
 }
 
 
@@ -167,5 +171,26 @@ footer a {
 
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg) no-repeat top center/cover;
+  }
+}
+
+/* Animações */
+@keyframes slide-in {
+  from {
+    left: 0%;
+  }
+
+  to {
+    left: 50%;
+  }
+
+}
+
+@keyframes slide-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left:0%;
   }
 }
