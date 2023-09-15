@@ -6,7 +6,7 @@
 
 :root {
   --text-color: white;
-  --bg-mobile: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
+  --bg-url: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
   --border-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.1);
   --social-media-bg-color: rgba(255, 255, 255, 0);
@@ -16,7 +16,7 @@
 
 .light {
   --text-color: black;
-  --bg-mobile: url(./assets/bg-mobile-light.jpg) no-repeat top center/cover;
+  --bg-url: url(./assets/bg-mobile-light.jpg) no-repeat top center/cover;
   --border-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.06);
   --social-media-bg-color: rgba(0, 0, 0, 0.1);
@@ -27,7 +27,7 @@
 
 
 body {
-  background: var(--bg-mobile);
+  background: var(--bg-url);
   line-height: 24px;
   height: 100vh;
   display: flex;
@@ -37,11 +37,10 @@ body {
 }
 
 #container {
-  width: 360px;
-  margin: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
+  max-width: 588px;
+  margin: 56px auto 0px;
+  padding: 0 24px;
 }
 
 /* Profile*/
@@ -65,6 +64,7 @@ body {
 #switch {
   position: relative;
   width: 64px;
+  margin: 0 auto;
 }
 
 #switch button {
@@ -73,7 +73,6 @@ body {
   background: white var(--switch-bg-url);
   border-radius: 50%;
   border: 0;
-
   position: absolute;
   z-index: 1;
   transform: translateY(-50%);
@@ -104,8 +103,7 @@ ul {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 360px;
-
+  width: 100%;
   padding: 24px 0;
 }
 
@@ -114,7 +112,7 @@ ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 35px;
+  padding: 20px 30px;
   background: var(--surface-color);
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -159,4 +157,15 @@ footer {
 
 footer a {
   color: var(--text-color);
+}
+
+/* media queries */
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg) no-repeat top center/cover;
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg) no-repeat top center/cover;
+  }
 }
